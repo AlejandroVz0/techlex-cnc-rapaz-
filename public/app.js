@@ -1,7 +1,11 @@
 /**
- * Cinemática Rapaz — TechLex CNC
- * Pestaña 1: Escáner Lens QR en Vivo (Cámara limpia al inicio + Barra Pill inferior compacta + Modal + Info / 3D)
- * Pestaña 2: Traductor Técnico CNC (Español <-> Inglés Industrial + 145 términos de VOCABULARIO.pdf)
+ * Cinemática Rapaz — TechLex CNC v3.0 Full-Stack Frontend
+ * Conectado 100% a la API REST + Base de Datos Relacional SQLite (sin lectura de JSON estático):
+ * - GET  /api/herramientas
+ * - GET  /api/herramientas/:codigo
+ * - GET  /api/vocabulario?q=...&categoria=...
+ * - POST /api/traducir
+ * - GET  /api/auditoria
  */
 
 (function () {
@@ -21,144 +25,8 @@
   let currentVocabCat = 'Todos';
   let lastTranslatedOutput = 'Tap';
   let lastTranslatedLang = 'en';
-
-  const rootGlossary = [
-    {
-      es: 'machuelo métrico',
-      en: 'metric tap',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: "Machuelo métrico" se traduce como "metric tap" (herramienta para tallar rosca métrica ISO interna).'
-    },
-    {
-      es: 'rima recta',
-      en: 'straight reamer',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: "Rima recta" es un escariador de flautas rectas para acabado de precisión H7 y se traduce como "straight reamer".'
-    },
-    {
-      es: 'machuelo',
-      en: 'tap',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: En maquinado CNC, "machuelo" es la herramienta de corte para tallar roscas internas y se traduce como "tap" (jamás literalmente como "little male" o "mule").'
-    },
-    {
-      es: 'machuelos',
-      en: 'taps',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: "Machuelos" corresponde a "taps" (herramientas de roscado interno).'
-    },
-    {
-      es: 'rima',
-      en: 'reamer',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: En taller mecánico, "rima" es un escariador de precisión para acabado de barrenos H7 y se traduce como "reamer" (nunca literalmente como "rhyme" poética).'
-    },
-    {
-      es: 'rimas',
-      en: 'reamers',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: "Rimas" equivale a "reamers" (escariadores de precisión).'
-    },
-    {
-      es: 'cortador vertical',
-      en: 'end mill',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: Un "cortador vertical" o fresa frontal se denomina universalmente en la industria CNC como "end mill" (no "vertical cutter").'
-    },
-    {
-      es: 'cortadores verticales',
-      en: 'end mills',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: "Cortadores verticales" se traduce técnicamente como "end mills".'
-    },
-    {
-      es: 'broquero',
-      en: 'drill chuck',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: "Broquero" (portabrocas de mordazas autocentrantes) se traduce exactamente como "drill chuck".'
-    },
-    {
-      es: 'broqueros',
-      en: 'drill chucks',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: "Broqueros" equivale en inglés técnico a "drill chucks".'
-    },
-    {
-      es: 'boquilla',
-      en: 'collet',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: En sujeción de herramientas CNC (ER40, R8, 5C), "boquilla" se traduce como "collet" (casquillo elástico de precisión, no "nozzle").'
-    },
-    {
-      es: 'boquillas',
-      en: 'collets',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: "Boquillas de sujeción" se traduce como "collets".'
-    },
-    {
-      es: 'prensa',
-      en: 'vise',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: La prensa o mordaza de mesa fresadora se traduce como "vise" (no "press").'
-    },
-    {
-      es: 'birlo',
-      en: 'stud',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: En sujeción de mesas CNC, un "birlo" o espárrago roscado se traduce como "clamping stud" o "threaded stud".'
-    },
-    {
-      es: 'birlos',
-      en: 'studs',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: "Birlos" corresponde a "threaded/clamping studs".'
-    },
-    {
-      es: 'rondana',
-      en: 'washer',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: "Rondana" (arandela de apoyo o presión) se traduce técnicamente como "washer".'
-    },
-    {
-      es: 'rondanas',
-      en: 'washers',
-      clasificacion: 'Dispositivos de sujeción',
-      nota: 'Traducción Técnica Industrial: "Rondanas" se traduce como "washers".'
-    },
-    {
-      es: 'broca',
-      en: 'drill',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: "Broca" de corte axial se traduce como "drill" o "drill bit".'
-    },
-    {
-      es: 'fresa',
-      en: 'mill',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: En maquinado, "fresa" es una herramienta rotativa multicorte y se traduce como "mill" o "milling cutter" (jamás "strawberry").'
-    },
-    {
-      es: 'cuerda',
-      en: 'thread',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: En jerga mecánica industrial, "cuerda" significa rosca helicoidal y se traduce como "thread" (no "rope").'
-    },
-    {
-      es: 'zanco',
-      en: 'shank',
-      clasificacion: 'Herramientas de corte',
-      nota: 'Traducción Técnica Industrial: El "zanco" o mango de sujeción de una broca o cortador se denomina "shank".'
-    }
-  ];
-
-  function normalizeStr(str) {
-    return String(str || '')
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/["""']/g, '')
-      .trim();
-  }
+  let translateTimer = null;
+  let vocabFilterTimer = null;
 
   function playLensChime() {
     try {
@@ -330,70 +198,79 @@
     return text.toUpperCase();
   }
 
-  // Muestra la barra inferior compacta tipo "pill" al detectar un QR o pulsar un botón rápido
-  function showLensCardForTool(toolId, playSound = true) {
-    const tool = herramientasQR.find(t => t.id.toUpperCase() === String(toolId).toUpperCase());
-    if (!tool) return false;
+  /**
+   * Consulta GET /api/herramientas/:codigo en SQLite, registra el escaneo en historial_escaneos
+   * y muestra la barra inferior compacta tipo "pill"
+   */
+  async function showLensCardForTool(toolId, playSound = true) {
+    try {
+      const cleanId = String(toolId || '').trim().toUpperCase();
+      if (!cleanId) return false;
 
-    currentTool = tool;
-    if (playSound) playLensChime();
+      const res = await fetch(`/api/herramientas/${encodeURIComponent(cleanId)}`);
+      if (!res.ok) return false;
+      const tool = await res.json();
 
-    fetch(`/api/log?pieza=${encodeURIComponent(tool.id)}&lang=LENS-QR`).catch(() => {});
+      currentTool = tool;
+      if (playSound) playLensChime();
 
-    const statusLabel = document.getElementById('lens-status-label');
-    const statusDot = document.getElementById('lens-status-dot');
-    if (statusLabel) {
-      statusLabel.textContent = `QR: ${tool.id} (${tool.norma})`;
-    }
-    if (statusDot) {
-      statusDot.className = 'w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#56e5a9]';
-    }
-
-    const setText = (id, val) => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = val;
-    };
-
-    // Barra inferior ultracompacta: solo Nombre en Español y Nombre técnico en Inglés
-    setText('hud-es-name', tool.idiomas.es.nombre);
-    setText('hud-en-name', tool.idiomas.en.nombre);
-
-    // Poblar los detalles completos dentro del Modal "+ Info / 3D"
-    setText('modal-id', tool.id);
-    setText('modal-norma', `${tool.norma} · ${tool.subnorma}`);
-    setText('modal-title', `${tool.idiomas.es.nombre} / ${tool.idiomas.en.nombre}`);
-    setText('modal-categoria', tool.categoria);
-    setText('modal-phonetics', `${tool.idiomas.es.fonetica} · ${tool.idiomas.en.fonetica}`);
-    setText('modal-definicion', tool.idiomas.es.definicion);
-    setText('modal-spec-mat', `${tool.especificaciones.material} (${tool.especificaciones.dureza})`);
-    setText('modal-spec-prec', `${tool.especificaciones.precision}`);
-    setText('modal-spec-rango', tool.especificaciones.rango);
-    setText('modal-spec-fij', `${tool.especificaciones.fijacion}`);
-    setText('modal-aplicacion', tool.idiomas.es.aplicacion);
-    setText('modal-mantenimiento', tool.idiomas.es.mantenimiento);
-
-    const modalSvg = document.getElementById('modal-svg-container');
-    if (modalSvg) modalSvg.innerHTML = getToolSVG(tool.id);
-
-    // Mostrar la barra compacta inferior
-    const hudCard = document.getElementById('lens-hud-card');
-    if (hudCard) {
-      hudCard.classList.remove('hidden');
-    }
-
-    // Resaltar botón activo en la tira de simulación
-    document.querySelectorAll('#quick-sim-strip button').forEach(btn => {
-      if (btn.dataset.toolId === tool.id) {
-        btn.className = 'px-2.5 py-1 rounded-md bg-primary text-slate-950 font-mono text-[11px] font-bold shrink-0 shadow transition-all';
-      } else {
-        btn.className = 'px-2.5 py-1 rounded-md bg-surface-container hover:bg-surface-high text-on-surface-variant hover:text-white font-mono text-[11px] shrink-0 border border-white/5 transition-all';
+      const statusLabel = document.getElementById('lens-status-label');
+      const statusDot = document.getElementById('lens-status-dot');
+      if (statusLabel) {
+        statusLabel.textContent = `QR: ${tool.codigo_qr} (${tool.norma})`;
       }
-    });
+      if (statusDot) {
+        statusDot.className = 'w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#56e5a9]';
+      }
 
-    return true;
+      const setText = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      const nombreEs = tool.nombre_es || tool.idiomas?.es?.nombre || '';
+      const nombreEn = tool.nombre_en || tool.idiomas?.en?.nombre || '';
+
+      setText('hud-es-name', nombreEs);
+      setText('hud-en-name', nombreEn);
+
+      // Poblar el Modal "+ Info / 3D"
+      setText('modal-id', tool.codigo_qr);
+      setText('modal-norma', `${tool.norma}${tool.subnorma ? ' · ' + tool.subnorma : ''}`);
+      setText('modal-title', `${nombreEs} / ${nombreEn}`);
+      setText('modal-categoria', tool.clasificacion || tool.categoria);
+      setText('modal-phonetics', `${tool.idiomas?.es?.fonetica || ''} · ${tool.idiomas?.en?.fonetica || ''}`);
+      setText('modal-definicion', tool.descripcion || tool.idiomas?.es?.definicion || '');
+      setText('modal-spec-mat', `${tool.especificaciones?.material || ''} (${tool.especificaciones?.dureza || ''})`);
+      setText('modal-spec-prec', `${tool.especificaciones?.precision || ''}`);
+      setText('modal-spec-rango', tool.especificaciones?.rango || '');
+      setText('modal-spec-fij', tool.especificaciones?.fijacion || '');
+      setText('modal-aplicacion', tool.idiomas?.es?.aplicacion || '');
+      setText('modal-mantenimiento', tool.idiomas?.es?.mantenimiento || '');
+
+      const modalSvg = document.getElementById('modal-svg-container');
+      if (modalSvg) modalSvg.innerHTML = getToolSVG(tool.codigo_qr);
+
+      const hudCard = document.getElementById('lens-hud-card');
+      if (hudCard) {
+        hudCard.classList.remove('hidden');
+      }
+
+      document.querySelectorAll('#quick-sim-strip button').forEach(btn => {
+        if (btn.dataset.toolId === tool.codigo_qr) {
+          btn.className = 'px-2.5 py-1 rounded-md bg-primary text-slate-950 font-mono text-[11px] font-bold shrink-0 shadow transition-all';
+        } else {
+          btn.className = 'px-2.5 py-1 rounded-md bg-surface-container hover:bg-surface-high text-on-surface-variant hover:text-white font-mono text-[11px] shrink-0 border border-white/5 transition-all';
+        }
+      });
+
+      return true;
+    } catch (err) {
+      console.error('Error al consultar /api/herramientas/:codigo:', err);
+      return false;
+    }
   }
 
-  // Ocultar la barra inferior y dejar la cámara 100% limpia
   function hideLensCard() {
     currentTool = null;
     lastScannedCode = null;
@@ -514,11 +391,15 @@
     const strip = document.getElementById('quick-sim-strip');
     if (!strip) return;
 
-    strip.innerHTML = herramientasQR.map(tool => `
-      <button type="button" data-tool-id="${tool.id}" class="px-2.5 py-1 rounded-md bg-surface-container hover:bg-surface-high text-on-surface-variant hover:text-white font-mono text-[11px] shrink-0 border border-white/5 transition-all">
-        <span class="text-primary font-bold">${tool.id.replace('TOOL-', '')}</span> · ${tool.idiomas.es.nombre}
-      </button>
-    `).join('');
+    strip.innerHTML = herramientasQR.map(tool => {
+      const code = tool.codigo_qr || tool.id;
+      const nameEs = tool.nombre_es || tool.idiomas?.es?.nombre || '';
+      return `
+        <button type="button" data-tool-id="${code}" class="px-2.5 py-1 rounded-md bg-surface-container hover:bg-surface-high text-on-surface-variant hover:text-white font-mono text-[11px] shrink-0 border border-white/5 transition-all">
+          <span class="text-primary font-bold">${code.replace('TOOL-', '')}</span> · ${nameEs}
+        </button>
+      `;
+    }).join('');
 
     strip.querySelectorAll('button').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -528,10 +409,10 @@
   }
 
   // =========================================================================
-  // MOTOR DEL TRADUCTOR TÉCNICO CNC (PESTAÑA 2)
+  // TRADUCTOR TÉCNICO CNC CONECTADO A POST /api/traducir Y GET /api/vocabulario
   // =========================================================================
 
-  function runTechnicalTranslation(rawInput) {
+  async function runTechnicalTranslation(rawInput) {
     const outputEl = document.getElementById('translator-output');
     const subMatchesEl = document.getElementById('translator-sub-matches');
     const noteTextEl = document.getElementById('translator-note-text');
@@ -541,40 +422,44 @@
     if (!text) {
       outputEl.textContent = 'Escribe un término o frase...';
       subMatchesEl.innerHTML = '';
-      noteTextEl.textContent = 'Traduce terminología real de Fresado CNC (ej. "machuelo" → "tap", "rima" → "reamer", "cortador vertical" → "end mill", "broquero" → "drill chuck") evitando traducciones literales erróneas.';
+      noteTextEl.textContent = 'Traduce terminología real de Fresado CNC desde la base de datos SQLite evitando traducciones literales erróneas.';
       return;
     }
 
-    const normInput = normalizeStr(text);
-    const allEntries = [...vocabularioCNC, ...rootGlossary];
+    try {
+      const res = await fetch('/api/traducir', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          texto: text,
+          idioma: translateDirection
+        })
+      });
 
-    const exactEs = allEntries.find(item => normalizeStr(item.es) === normInput);
-    const exactEn = allEntries.find(item => normalizeStr(item.en) === normInput);
+      if (!res.ok) return;
+      const data = await res.json();
 
-    if (exactEs || exactEn) {
-      const matched = exactEs || exactEn;
-      const isFromEs = Boolean(exactEs);
-      const translatedText = isFromEs ? matched.en : matched.es;
-      lastTranslatedOutput = translatedText;
-      lastTranslatedLang = isFromEs ? 'en' : 'es';
+      lastTranslatedOutput = data.traduccion || '';
+      lastTranslatedLang = data.idioma_salida || 'en';
 
       outputEl.innerHTML = `
-        <span class="text-secondary">${translatedText}</span>
-        <span class="ml-2 px-2 py-0.5 rounded bg-white/10 text-on-surface-variant font-mono text-xs font-normal">${matched.clasificacion}</span>
+        <span class="text-secondary">${data.traduccion}</span>
+        ${data.clasificacion ? `<span class="ml-2 px-2 py-0.5 rounded bg-white/10 text-on-surface-variant font-mono text-xs font-normal">${data.clasificacion}</span>` : ''}
       `;
-      noteTextEl.textContent = matched.nota;
+      noteTextEl.textContent = data.explicacion_tecnica || '';
 
-      const related = vocabularioCNC.filter(v =>
-        (normalizeStr(v.es).includes(normInput) || normalizeStr(v.en).includes(normInput)) &&
-        normalizeStr(v.es) !== normalizeStr(matched.es)
-      ).slice(0, 6);
+      const variantes = data.variantes || [];
+      if (variantes.length > 0) {
+        subMatchesEl.innerHTML = variantes.map(r => {
+          const termEs = r.es || r.termino_es;
+          const termEn = r.en || r.termino_en;
+          return `
+            <button type="button" data-es="${termEs}" class="variant-pill px-2 py-0.5 rounded bg-surface hover:bg-surface-high border border-white/10 font-mono text-[11px] text-on-surface transition-colors">
+              ${termEs} → <strong class="text-primary">${termEn}</strong>
+            </button>
+          `;
+        }).join('');
 
-      if (related.length > 0) {
-        subMatchesEl.innerHTML = related.map(r => `
-          <button type="button" data-es="${r.es}" class="variant-pill px-2 py-0.5 rounded bg-surface hover:bg-surface-high border border-white/10 font-mono text-[11px] text-on-surface transition-colors">
-            ${r.es} → <strong class="text-primary">${r.en}</strong>
-          </button>
-        `).join('');
         subMatchesEl.querySelectorAll('.variant-pill').forEach(btn => {
           btn.addEventListener('click', () => {
             const inputBox = document.getElementById('translator-input');
@@ -587,183 +472,101 @@
       } else {
         subMatchesEl.innerHTML = '';
       }
-      return;
-    }
-
-    const partialMatches = vocabularioCNC.filter(item =>
-      normalizeStr(item.es).includes(normInput) || normalizeStr(item.en).includes(normInput)
-    );
-
-    if (partialMatches.length > 0 && text.split(/\s+/).length <= 3) {
-      const best = partialMatches[0];
-      const isQueryEs = normalizeStr(best.es).includes(normInput);
-      const primaryResult = isQueryEs ? best.en : best.es;
-      lastTranslatedOutput = primaryResult;
-      lastTranslatedLang = isQueryEs ? 'en' : 'es';
-
-      outputEl.innerHTML = `
-        <span class="text-secondary">${primaryResult}</span>
-        <span class="ml-2 px-2 py-0.5 rounded bg-white/10 text-on-surface-variant font-mono text-xs font-normal">${best.clasificacion}</span>
-      `;
-      noteTextEl.textContent = `${best.nota} ("${best.es}" ↔ "${best.en}").`;
-
-      subMatchesEl.innerHTML = partialMatches.slice(0, 6).map(r => `
-        <button type="button" data-es="${r.es}" class="variant-pill px-2 py-0.5 rounded bg-surface hover:bg-surface-high border border-white/10 font-mono text-[11px] text-on-surface transition-colors">
-          ${r.es} → <strong class="text-primary">${r.en}</strong>
-        </button>
-      `).join('');
-
-      subMatchesEl.querySelectorAll('.variant-pill').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const inputBox = document.getElementById('translator-input');
-          if (inputBox) {
-            inputBox.value = btn.dataset.es;
-            runTechnicalTranslation(btn.dataset.es);
-          }
-        });
-      });
-      return;
-    }
-
-    let workingSentence = text;
-    const detectedTerms = [];
-    const sortedPool = [...vocabularioCNC, ...rootGlossary].sort((a, b) => b.es.length - a.es.length);
-
-    sortedPool.forEach(entry => {
-      const esEscaped = entry.es.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const regexEs = new RegExp(`\\b${esEscaped}\\b`, 'gi');
-      if (regexEs.test(workingSentence)) {
-        detectedTerms.push(entry);
-        workingSentence = workingSentence.replace(regexEs, `[${entry.en.toUpperCase()}]`);
-      }
-    });
-
-    const connectors = [
-      [/\bnecesito un\b/gi, 'I need a'],
-      [/\bnecesito una\b/gi, 'I need a'],
-      [/\bnecesito\b/gi, 'I need'],
-      [/\binstalar un\b/gi, 'install a'],
-      [/\binstalar una\b/gi, 'install a'],
-      [/\bcambiar el\b/gi, 'change the'],
-      [/\bcambiar la\b/gi, 'change the'],
-      [/\bmedir con\b/gi, 'measure with'],
-      [/\bsujetar con\b/gi, 'clamp with'],
-      [/\ben el\b/gi, 'in the'],
-      [/\ben la\b/gi, 'in the'],
-      [/\bcon un\b/gi, 'with a'],
-      [/\bcon una\b/gi, 'with a'],
-      [/\bpara\b/gi, 'for'],
-      [/\by un\b/gi, 'and a'],
-      [/\by una\b/gi, 'and a'],
-      [/\by\b/gi, 'and'],
-      [/\bun\b/gi, 'a'],
-      [/\buna\b/gi, 'a']
-    ];
-
-    if (detectedTerms.length > 0) {
-      connectors.forEach(([rgx, rep]) => {
-        workingSentence = workingSentence.replace(rgx, rep);
-      });
-      lastTranslatedOutput = workingSentence.replace(/\[|\]/g, '');
-      lastTranslatedLang = 'en';
-
-      outputEl.innerHTML = `<span class="text-white text-base sm:text-lg">${workingSentence}</span>`;
-      noteTextEl.textContent = `Se tradujeron ${detectedTerms.length} términos técnicos industriales de Fresado CNC con su nomenclatura normalizada (no literal).`;
-
-      subMatchesEl.innerHTML = detectedTerms.slice(0, 6).map(t => `
-        <span class="px-2 py-0.5 rounded bg-primary/15 border border-primary/40 font-mono text-[11px] text-primary">
-          ${t.es} = <strong>${t.en}</strong>
-        </span>
-      `).join('');
-    } else {
-      outputEl.innerHTML = `<span class="text-outline text-sm">Sin coincidencia exacta. Prueba con "machuelo", "rima", "cortador vertical", "broquero", "gage" o "collet".</span>`;
-      subMatchesEl.innerHTML = '';
+    } catch (err) {
+      console.error('Error al consultar POST /api/traducir:', err);
     }
   }
 
-  function renderVocabList() {
+  /**
+   * Consulta GET /api/vocabulario?q=...&categoria=... en SQLite y renderiza las tarjetas
+   */
+  async function fetchAndRenderVocabList() {
     const container = document.getElementById('vocab-list-container');
     const searchInput = document.getElementById('vocab-search-input');
     if (!container) return;
 
-    const query = normalizeStr(searchInput ? searchInput.value : '');
+    const q = searchInput ? searchInput.value.trim() : '';
+    const catParam = currentVocabCat === 'Todos' ? '' : currentVocabCat;
 
-    const filtered = vocabularioCNC.filter(item => {
-      const matchesCat = currentVocabCat === 'Todos' || item.clasificacion === currentVocabCat;
-      const matchesQuery =
-        !query ||
-        normalizeStr(item.es).includes(query) ||
-        normalizeStr(item.en).includes(query) ||
-        normalizeStr(item.clasificacion).includes(query);
-      return matchesCat && matchesQuery;
-    });
+    try {
+      const url = `/api/vocabulario?q=${encodeURIComponent(q)}&categoria=${encodeURIComponent(catParam)}`;
+      const res = await fetch(url);
+      if (!res.ok) return;
+      const filtered = await res.json();
 
-    const catColors = {
-      'Herramientas de corte': 'text-primary border-primary/30 bg-primary/10',
-      'Instrumentos de medición y verificación': 'text-secondary border-secondary/30 bg-secondary/10',
-      'Elementos de alineación, apoyo y localización': 'text-tertiary border-tertiary/30 bg-tertiary/10',
-      'Dispositivos de sujeción': 'text-amber-300 border-amber-400/30 bg-amber-400/10'
-    };
+      const catColors = {
+        'Herramientas de corte': 'text-primary border-primary/30 bg-primary/10',
+        'Instrumentos de medición y verificación': 'text-secondary border-secondary/30 bg-secondary/10',
+        'Elementos de alineación, apoyo y localización': 'text-tertiary border-tertiary/30 bg-tertiary/10',
+        'Dispositivos de sujeción': 'text-amber-300 border-amber-400/30 bg-amber-400/10'
+      };
 
-    container.innerHTML = filtered.map((item) => {
-      const badgeClass = catColors[item.clasificacion] || 'text-secondary border-white/10 bg-white/5';
-      return `
-        <div class="vocab-card p-3 rounded-xl bg-surface hover:bg-surface-high border border-white/10 flex flex-col justify-between gap-1.5 cursor-pointer transition-all group" data-es="${item.es}">
-          <div class="flex items-center justify-between gap-1">
-            <span class="px-2 py-0.5 rounded font-mono text-[10px] font-semibold border ${badgeClass} truncate">
-              ${item.clasificacion}
-            </span>
-            <div class="flex items-center gap-1 shrink-0">
-              <button type="button" class="btn-card-speak-es w-6 h-6 rounded bg-white/5 hover:bg-primary hover:text-slate-950 text-outline flex items-center justify-center transition-colors" data-text="${item.es}" title="Escuchar en Español">
-                <span class="font-mono text-[9px] font-bold">ES</span>
-              </button>
-              <button type="button" class="btn-card-speak-en w-6 h-6 rounded bg-white/5 hover:bg-secondary hover:text-slate-950 text-outline flex items-center justify-center transition-colors" data-text="${item.en}" title="Listen in English">
-                <span class="font-mono text-[9px] font-bold">EN</span>
-              </button>
+      container.innerHTML = filtered.map((item) => {
+        const termEs = item.termino_es || item.es;
+        const termEn = item.termino_en || item.en;
+        const nota = item.nota_tecnica || item.nota || '';
+        const badgeClass = catColors[item.clasificacion] || 'text-secondary border-white/10 bg-white/5';
+
+        return `
+          <div class="vocab-card p-3 rounded-xl bg-surface hover:bg-surface-high border border-white/10 flex flex-col justify-between gap-1.5 cursor-pointer transition-all group" data-es="${termEs}">
+            <div class="flex items-center justify-between gap-1">
+              <span class="px-2 py-0.5 rounded font-mono text-[10px] font-semibold border ${badgeClass} truncate">
+                ${item.clasificacion}
+              </span>
+              <div class="flex items-center gap-1 shrink-0">
+                <button type="button" class="btn-card-speak-es w-6 h-6 rounded bg-white/5 hover:bg-primary hover:text-slate-950 text-outline flex items-center justify-center transition-colors" data-text="${termEs}" title="Escuchar en Español">
+                  <span class="font-mono text-[9px] font-bold">ES</span>
+                </button>
+                <button type="button" class="btn-card-speak-en w-6 h-6 rounded bg-white/5 hover:bg-secondary hover:text-slate-950 text-outline flex items-center justify-center transition-colors" data-text="${termEn}" title="Listen in English">
+                  <span class="font-mono text-[9px] font-bold">EN</span>
+                </button>
+              </div>
             </div>
+
+            <div class="flex flex-col">
+              <div class="font-display text-sm font-bold text-white group-hover:text-primary transition-colors">
+                🇪🇸 ${termEs}
+              </div>
+              <div class="font-display text-sm font-bold text-secondary">
+                🇬🇧 ${termEn}
+              </div>
+            </div>
+
+            <p class="font-body text-[11px] text-outline leading-snug line-clamp-2">
+              ${nota}
+            </p>
           </div>
+        `;
+      }).join('');
 
-          <div class="flex flex-col">
-            <div class="font-display text-sm font-bold text-white group-hover:text-primary transition-colors">
-              🇪🇸 ${item.es}
-            </div>
-            <div class="font-display text-sm font-bold text-secondary">
-              🇬🇧 ${item.en}
-            </div>
-          </div>
-
-          <p class="font-body text-[11px] text-outline leading-snug line-clamp-2">
-            ${item.nota}
-          </p>
-        </div>
-      `;
-    }).join('');
-
-    container.querySelectorAll('.vocab-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('button')) return;
-        const termEs = card.dataset.es;
-        const inputEl = document.getElementById('translator-input');
-        if (inputEl) {
-          inputEl.value = termEs;
-          runTechnicalTranslation(termEs);
-        }
+      container.querySelectorAll('.vocab-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('button')) return;
+          const termEs = card.dataset.es;
+          const inputEl = document.getElementById('translator-input');
+          if (inputEl) {
+            inputEl.value = termEs;
+            runTechnicalTranslation(termEs);
+          }
+        });
       });
-    });
 
-    container.querySelectorAll('.btn-card-speak-es').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        speakTerm(btn.dataset.text, 'es', btn);
+      container.querySelectorAll('.btn-card-speak-es').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          speakTerm(btn.dataset.text, 'es', btn);
+        });
       });
-    });
 
-    container.querySelectorAll('.btn-card-speak-en').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        speakTerm(btn.dataset.text, 'en', btn);
+      container.querySelectorAll('.btn-card-speak-en').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          speakTerm(btn.dataset.text, 'en', btn);
+        });
       });
-    });
+    } catch (err) {
+      console.error('Error al consultar GET /api/vocabulario:', err);
+    }
   }
 
   function switchMainTab(tabName) {
@@ -833,13 +636,13 @@
     if (btnSpeakEs) {
       btnSpeakEs.addEventListener('click', () => {
         if (!currentTool) return;
-        speakTerm(currentTool.idiomas.es.nombre, 'es', btnSpeakEs);
+        speakTerm(currentTool.nombre_es || currentTool.idiomas?.es?.nombre, 'es', btnSpeakEs);
       });
     }
     if (btnSpeakEn) {
       btnSpeakEn.addEventListener('click', () => {
         if (!currentTool) return;
-        speakTerm(currentTool.idiomas.en.nombre, 'en', btnSpeakEn);
+        speakTerm(currentTool.nombre_en || currentTool.idiomas?.en?.nombre, 'en', btnSpeakEn);
       });
     }
 
@@ -880,7 +683,10 @@
 
     if (translatorInput) {
       translatorInput.addEventListener('input', () => {
-        runTechnicalTranslation(translatorInput.value);
+        clearTimeout(translateTimer);
+        translateTimer = setTimeout(() => {
+          runTechnicalTranslation(translatorInput.value);
+        }, 160);
       });
     }
     if (btnClearTranslator && translatorInput) {
@@ -933,7 +739,12 @@
 
     const vocabSearchInput = document.getElementById('vocab-search-input');
     if (vocabSearchInput) {
-      vocabSearchInput.addEventListener('input', () => renderVocabList());
+      vocabSearchInput.addEventListener('input', () => {
+        clearTimeout(vocabFilterTimer);
+        vocabFilterTimer = setTimeout(() => {
+          fetchAndRenderVocabList();
+        }, 150);
+      });
     }
 
     const catButtons = document.querySelectorAll('#vocab-cat-filters button');
@@ -947,11 +758,12 @@
             b.className = 'px-3 py-1 rounded-full font-mono text-xs bg-surface hover:bg-surface-high text-on-surface-variant hover:text-white border border-white/10 shrink-0 transition-all';
           }
         });
-        renderVocabList();
+        fetchAndRenderVocabList();
       });
     });
   }
 
+  // Inicialización principal consumiendo únicamente los endpoints REST de SQLite
   async function init() {
     try {
       fetch('/api/info')
@@ -959,27 +771,30 @@
         .then(info => {
           const lanText = document.getElementById('lan-status-text');
           if (lanText && info && info.ip) {
-            lanText.textContent = `LAN: ${info.ip}:${info.port}`;
+            lanText.textContent = `LAN: ${info.ip}:${info.port} · SQLite API`;
           }
         })
         .catch(() => {});
 
-      const res = await fetch('catalogo.json');
-      const data = await res.json();
-      herramientasQR = Array.isArray(data) ? data : (data.herramientasQR || []);
-      vocabularioCNC = Array.isArray(data) ? [] : (data.vocabularioCNC || []);
+      const [resHerramientas, resVocabulario] = await Promise.all([
+        fetch('/api/herramientas'),
+        fetch('/api/vocabulario')
+      ]);
+
+      herramientasQR = await resHerramientas.json();
+      vocabularioCNC = await resVocabulario.json();
 
       const totalPill = document.getElementById('vocab-total-pill');
       if (totalPill && vocabularioCNC.length) {
         totalPill.textContent = vocabularioCNC.length;
       }
     } catch (err) {
-      console.error('Error cargando catalogo.json:', err);
+      console.error('Error conectando con la API REST SQLite:', err);
       return;
     }
 
     renderQuickSimStrip();
-    renderVocabList();
+    await fetchAndRenderVocabList();
     bindEvents();
 
     const translatorInput = document.getElementById('translator-input');
@@ -991,8 +806,6 @@
     await populateCameraList();
     startOrSwitchCamera();
 
-    // Al abrir la página, la cámara se ve completamente limpia sin tarjetas encima,
-    // salvo que se haya escaneado un QR externo que incluya ?pieza= en la URL.
     const params = new URLSearchParams(window.location.search);
     const piezaParam = params.get('pieza') || params.get('id');
     if (piezaParam) {

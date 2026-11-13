@@ -26,12 +26,16 @@ Aplicación web industrial de traducción técnica y escaneo visual de herramien
 
 ---
 
-## 📋 Estructura del Proyecto
+## 📋 Estructura del Proyecto y API REST (SQLite)
 
-- `server.js`: Servidor Express en red local (`0.0.0.0:3000`), autodetección de IP Wi-Fi/LAN, auditoría en consola en tiempo real (`[NET-AUDIT]`) y generador de códigos QR (`/qrs`).
-- `public/index.html`: Interfaz responsiva dividida en 2 pestañas (`Escáner Lens QR` y `Traductor Técnico CNC`).
-- `public/app.js`: Lógica de lectura QR con `html5-qrcode`, síntesis de voz bilingüe (ES/EN), modal CAD/3D y motor de traducción técnica industrial.
-- `public/catalogo.json`: Base de datos con las 10 herramientas principales con QR y los 145 términos oficiales de Fresado CNC extraídos de `VOCABULARIO.pdf`.
+- `database.js`: Inicializador de la base de datos relacional **SQLite (`techlex.db`)** con las 3 tablas (`herramientas_qr`, `vocabulario_cnc`, `historial_escaneos`) y *auto-seed* automático.
+- `server.js`: Servidor Express con **CORS** habilitado en red local (`0.0.0.0:3000`) para consumo desde Web y App Android:
+  - `GET /api/herramientas`: Lista las 10 herramientas con QR desde SQLite.
+  - `GET /api/herramientas/:codigo`: Obtiene una pieza por su código QR y registra el escaneo con la IP del cliente en `historial_escaneos`.
+  - `GET /api/vocabulario`: Lista los 145 términos oficiales del PDF (filtrable con `?q=texto` y `?categoria=nombre` mediante SQL `LIKE`).
+  - `POST /api/traducir`: Recibe `{ texto, idioma }`, consulta la traducción técnica en SQLite, la registra en `historial_escaneos` y devuelve el resultado.
+  - `GET /api/auditoria`: Devuelve los últimos 50 registros de `historial_escaneos` en tiempo real.
+- `public/index.html` y `public/app.js`: Frontend conectado a los endpoints REST del Backend.
 
 ---
 
