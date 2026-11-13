@@ -1,0 +1,13 @@
+{
+  "name": "cinematica-rapaz-techlex",
+  "version": "2.4.0",
+  "description": "Diccionario Industrial Multilingüe & Inspector 3D - Hackathon UTC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "qrcode": "^1.5.3"
+  }
+}

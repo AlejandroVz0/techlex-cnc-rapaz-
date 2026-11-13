@@ -1,0 +1,604 @@
+{
+  "herramientasQR": [
+    {
+      "id": "TOOL-MET-001",
+      "categoria": "Instrumentos de medición y verificación",
+      "subcategoria": "Metrología Dimensional",
+      "resumenCorto": "Metrología (0-150mm)",
+      "norma": "DIN 862",
+      "subnorma": "ISO 13385-1",
+      "especificaciones": {
+        "material": "Acero Inox.",
+        "dureza": "HRC 52-56",
+        "precision": "±0.02 mm",
+        "subprecision": "1/50 mm Nonio",
+        "rango": "0 - 150 mm",
+        "acabado": "Cromo Mate",
+        "fijacion": "Tornillo Moleteado"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Calibradores Vernier",
+          "sinonimo": "Pie de Rey / Calibrador Vernier",
+          "fonetica": "/pje ðe rej/",
+          "definicion": "Instrumento de medición lineal de alta exactitud compuesto por una regla fija graduada y una corredera móvil dotada de nonio para apreciar fracciones de milímetro (hasta 0.02 mm).",
+          "aplicacion": "Verificación dimensional inmediata de diámetros exteriores, interiores y profundidades de ranuras en piezas mecanizadas en torno y fresadora CNC.",
+          "mantenimiento": "Limpieza con alcohol isopropílico antes de medir. Verificación del punto cero a contraluz y almacenamiento con tornillo de fijación liberado."
+        },
+        "en": {
+          "nombre": "Vernier calipers",
+          "sinonimo": "Slide Gauge / Vernier Caliper",
+          "fonetica": "/ˈvɜːnɪə ˈkælɪpəz/",
+          "definicion": "High-accuracy linear measuring instrument consisting of a fixed main scale and a sliding jaw with a Vernier scale resolving down to 0.02 mm.",
+          "aplicacion": "Direct dimensional inspection of outer diameters, inner bores, and step/slot depths on CNC-milled workpieces.",
+          "mantenimiento": "Wipe measuring faces clean before inspection, verify zero closure against light, and store unlocked."
+        },
+        "de": {
+          "nombre": "Messschieber",
+          "sinonimo": "Schieblehre",
+          "fonetica": "/ˈmɛsˌʃiːbɐ/"
+        },
+        "fr": {
+          "nombre": "Pied à coulisse",
+          "sinonimo": "Calibre à vernier",
+          "fonetica": "/pje a kulis/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-MET-002",
+      "categoria": "Instrumentos de medición y verificación",
+      "subcategoria": "Metrología Micrométrica",
+      "resumenCorto": "0-25 mm · ±0.001mm",
+      "norma": "DIN 863",
+      "subnorma": "ISO 3611",
+      "especificaciones": {
+        "material": "Carburo / Invar",
+        "dureza": "HRC 60-64",
+        "precision": "±0.001 mm",
+        "subprecision": "Paso 0.5 mm",
+        "rango": "0 - 25 mm",
+        "acabado": "Esmaltado Térmico",
+        "fijacion": "Trinquete Dinamométrico"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Micrómetro para exterior",
+          "sinonimo": "Micrómetro Palmer / Tornillo Micrométrico",
+          "fonetica": "/miˈkɾometɾo ˈpalmeɾ/",
+          "definicion": "Instrumento metrológico de altísima precisión basado en un husillo roscado rectificado de paso 0.5 mm que convierte el giro del tambor en desplazamiento axial con resolución de 0.001 mm.",
+          "aplicacion": "Control de tolerancias estrechas ISO (IT5 a IT7), ajustes de ejes rectificados, asientos de rodamientos y espesores críticos en maquinado CNC.",
+          "mantenimiento": "Limpiar caras de carburo con papel libre de pelusa bajo presión del trinquete y calibrar con bloques patrón grado 0."
+        },
+        "en": {
+          "nombre": "Outside micrometer",
+          "sinonimo": "Micrometer Screw Gauge / Palmer",
+          "fonetica": "/ˈaʊtsaɪd maɪˈkrɒmɪtə/",
+          "definicion": "Ultra-precision metrological instrument operating on a ground 0.5 mm pitch lead screw translating thimble rotation into linear travel with 0.001 mm resolution.",
+          "aplicacion": "Inspection of tight ISO shaft tolerances, bearing journals, and precision-ground CNC components.",
+          "mantenimiento": "Clean carbide anvil faces with lint-free paper and calibrate regularly using Grade 0 gauge blocks."
+        },
+        "de": {
+          "nombre": "Bügelmessschraube",
+          "sinonimo": "Mikrometer",
+          "fonetica": "/ˈbyːɡl̩ˌmɛsʃʁaʊ̯bə/"
+        },
+        "fr": {
+          "nombre": "Micromètre d'extérieur",
+          "sinonimo": "Palmer",
+          "fonetica": "/mikʁɔmɛtʁ/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-MET-003",
+      "categoria": "Instrumentos de medición y verificación",
+      "subcategoria": "Metrología Geométrica GD&T",
+      "resumenCorto": "Indicador Carátula 0.01mm",
+      "norma": "DIN 878",
+      "subnorma": "ISO 463",
+      "especificaciones": {
+        "material": "Acero / Rubí Sint.",
+        "dureza": "HV 1800 (Punta)",
+        "precision": "±0.01 mm",
+        "subprecision": "1 rev = 1.0 mm",
+        "rango": "0 - 10 mm",
+        "acabado": "Bisel Antirreflejo",
+        "fijacion": "Vástago Ø8mm h6"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Indicador de carátula",
+          "sinonimo": "Reloj Comparador / Palpador Mecánico",
+          "fonetica": "/indikaˈðoɾ ðe kaˈɾatula/",
+          "definicion": "Instrumento de medición por comparación que amplifica pequeños desplazamientos axiales de un husillo palpador mediante un tren de engranajes de precisión hacia una esfera graduada.",
+          "aplicacion": "Alineación de prensas de precisión y cabezales en fresadoras CNC, centrado de piezas y medición de excentricidad (runout), planitud y paralelismo.",
+          "mantenimiento": "No lubricar jamás el husillo palpador. Limpiar en seco y montar sobre base magnética para indicador."
+        },
+        "en": {
+          "nombre": "Dial indicator",
+          "sinonimo": "Dial Gauge / Plunger Indicator",
+          "fonetica": "/ˈdaɪəl ˈɪndɪkeɪtə/",
+          "definicion": "Comparative measuring instrument that mechanically amplifies minute axial displacements of a spring-loaded plunger onto a graduated circular dial.",
+          "aplicacion": "Squaring CNC machine vises, truing workpieces, and measuring radial/axial runout, flatness, and parallelism.",
+          "mantenimiento": "Never oil the plunger spindle; wipe dry with a lint-free cloth and check return repeatability."
+        },
+        "de": {
+          "nombre": "Messuhr",
+          "sinonimo": "Präzisions-Messuhr",
+          "fonetica": "/ˈmɛsˌuːɐ̯/"
+        },
+        "fr": {
+          "nombre": "Comparateur à cadran",
+          "sinonimo": "Palpeur mécanique",
+          "fonetica": "/kɔ̃paʁatœʁ a kadʁɑ̃/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-TRS-001",
+      "categoria": "Elementos de alineación, apoyo y localización",
+      "subcategoria": "Elementos de Giro y Apoyo",
+      "resumenCorto": "SKF 6205-2RS Radiales",
+      "norma": "ISO 15:2017",
+      "subnorma": "DIN 625-1",
+      "especificaciones": {
+        "material": "Acero 100Cr6",
+        "dureza": "HRC 60-64",
+        "precision": "Clase P6 / C3",
+        "subprecision": "C = 14.8 kN",
+        "rango": "Ø25×Ø52×15 mm",
+        "acabado": "Superacabado Honed",
+        "fijacion": "Ajuste Interferencia k5"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Rodamiento Rígido",
+          "sinonimo": "Rodamiento de Bolas / Apoyo Rotativo",
+          "fonetica": "/roðaˈmjento ˈriɣiðo/",
+          "definicion": "Elemento mecánico rodante antifricción de una hilera de bolas con pistas profundas capaz de soportar cargas radiales y axiales moderadas a altas RPM en husillos CNC.",
+          "aplicacion": "Apoyo rotativo en husillos secundarios, motores eléctricos trifásicos, apoyos de rodillo y transmisiones de máquinas-herramienta.",
+          "mantenimiento": "Montaje por inducción térmica a 110 °C y monitoreo predictivo mediante análisis de vibraciones."
+        },
+        "en": {
+          "nombre": "Deep groove ball bearing",
+          "sinonimo": "Radial Ball Bearing 6205-2RS",
+          "fonetica": "/diːp ɡruːv bɔːl ˈbɛərɪŋ/",
+          "definicion": "Single-row rolling-element bearing featuring deep raceway grooves engineered to carry radial and bidirectional axial loads at high rotational speeds.",
+          "aplicacion": "Rotary support in auxiliary CNC spindles, electric motors, roller supports, and industrial gearboxes.",
+          "mantenimiento": "Install via induction heater (max 110 °C) and monitor health with vibration spectrum analysis."
+        },
+        "de": {
+          "nombre": "Rillenkugellager",
+          "sinonimo": "Wälzlager 6205-2RS",
+          "fonetica": "/ˈʁɪlənˌkuːɡl̩laːɡɐ/"
+        },
+        "fr": {
+          "nombre": "Roulement rigide à billes",
+          "sinonimo": "Palier radial",
+          "fonetica": "/ʁulmɑ̃ ʁiʒid a bij/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-TRS-002",
+      "categoria": "Elementos de alineación, apoyo y localización",
+      "subcategoria": "Cinemática ySincronización",
+      "resumenCorto": "Módulo 2.5 · 24 Dientes",
+      "norma": "DIN 3962",
+      "subnorma": "ISO 1328-1",
+      "especificaciones": {
+        "material": "Acero 16MnCr5",
+        "dureza": "HRC 58-62 (Cem.)",
+        "precision": "Calidad DIN Q6",
+        "subprecision": "α = 20° Evolvente",
+        "rango": "M 2.5 · Z=24 · Øp 60",
+        "acabado": "Flancos Rectificados",
+        "fijacion": "Chavetero DIN 6885"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Engrane Recto",
+          "sinonimo": "Rueda Dentada Cilíndrica / Piñón",
+          "fonetica": "/eŋˈɡɾane ˈrekto/",
+          "definicion": "Rueda dentada cilíndrica con dientes rectos paralelos al eje y perfil evolvente (α = 20°) para transmitir par motor síncrono entre ejes paralelos sin empuje axial.",
+          "aplicacion": "Cajas de avances de máquinas-herramienta, cabezales divisores, reductores industriales y actuadores CNC.",
+          "mantenimiento": "Verificación de juego entre flancos (backlash) con indicador de carátula y lubricación EP ISO VG 220."
+        },
+        "en": {
+          "nombre": "Spur gear",
+          "sinonimo": "Cylindrical Involute Gear / Pinion",
+          "fonetica": "/spɜː ɡɪə/",
+          "definicion": "Cylindrical toothed wheel with straight teeth parallel to the shaft axis and a 20° involute profile for positive torque transmission between parallel shafts.",
+          "aplicacion": "Machine tool feed gearboxes, indexing headstocks, speed reducers, and synchronous drives.",
+          "mantenimiento": "Check tooth contact pattern with Prussian blue, verify backlash tolerance, and maintain EP oil lubrication."
+        },
+        "de": {
+          "nombre": "Geradstirnrad",
+          "sinonimo": "Stirnrad",
+          "fonetica": "/ɡəˈʁaːtˌʃtɪʁnʁaːt/"
+        },
+        "fr": {
+          "nombre": "Engrenage cylindrique droit",
+          "sinonimo": "Pignon droit",
+          "fonetica": "/ɑ̃ɡʁənaʒ dʁwa/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-MAQ-001",
+      "categoria": "Herramientas de corte",
+      "subcategoria": "Fresado CNC de Alto Rendimiento",
+      "resumenCorto": "4 Labios Ø12mm AlTiN",
+      "norma": "DIN 6527",
+      "subnorma": "ISO 1641",
+      "especificaciones": {
+        "material": "Carburo VHM K30F",
+        "dureza": "HV 3300 (AlTiN)",
+        "precision": "Tolerancia Ø e8",
+        "subprecision": "Hélice 35°/38°",
+        "rango": "Ø12 × 26 × 83 mm",
+        "acabado": "Recub. PVD AlTiN",
+        "fijacion": "Boquilla ER40 / Weldon"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Cortadores verticales de una sola pieza",
+          "sinonimo": "Fresa Frontal VHM / End Mill",
+          "fonetica": "/koɾtaˈðoɾ beɾtiˈkal/",
+          "definicion": "Herramienta rotativa monolítica de carburo de tungsteno integral (VHM) con filos periféricos y frontales de hélice variable para fresado CNC sin vibraciones.",
+          "aplicacion": "Fresado trocoidal dinámico, ranurado, escuadrado de hombros a 90° y perfilado de aceros en centros de mecanizado CNC.",
+          "mantenimiento": "Inspeccionar desgaste de flanco y montar en boquillas de sujeción DIN6388 o ER40 con excentricidad menor a 0.005 mm."
+        },
+        "en": {
+          "nombre": "One-piece end mills",
+          "sinonimo": "Solid Carbide End Mill / VHM Cutter",
+          "fonetica": "/wʌn piːs ɛnd mɪlz/",
+          "definicion": "Monolithic solid tungsten carbide rotary cutting tool featuring peripheral and end cutting edges with variable helix geometry for chatter-free CNC milling.",
+          "aplicacion": "High-efficiency trochoidal milling, slotting, shoulder profiling, and ramping on 3- to 5-axis CNC machining centers.",
+          "mantenimiento": "Check flank wear under microscope and clamp in precision collets or hydraulic holders with minimal runout."
+        },
+        "de": {
+          "nombre": "VHM-Schaftfräser",
+          "sinonimo": "Vollhartmetall-Fräser",
+          "fonetica": "/ˌfaʊ̯haːˈɛm ˈʃaftˌfʁɛːzɐ/"
+        },
+        "fr": {
+          "nombre": "Fraise deux tailles carbure",
+          "sinonimo": "Fraise en bout monobloc",
+          "fonetica": "/fʁɛz dø taj kaʁbyʁ/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-MAQ-002",
+      "categoria": "Herramientas de corte",
+      "subcategoria": "Operaciones de Taladrado CNC",
+      "resumenCorto": "HSS-Co Cobalto Ø8.5mm",
+      "norma": "DIN 338",
+      "subnorma": "ISO 235",
+      "especificaciones": {
+        "material": "Acero HSS-E Co5%",
+        "dureza": "HRC 65-67",
+        "precision": "Tolerancia Ø h8",
+        "subprecision": "Punta 135° Split",
+        "rango": "Ø8.5 × 75 × 117 mm",
+        "acabado": "Óxido Vapor Ámbar",
+        "fijacion": "Zanco Cilíndrico HA"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Brocas con zanco cilíndrico",
+          "sinonimo": "Broca Helicoidal HSS-Co / Mecha",
+          "fonetica": "/ˈbɾokas kon ˈsaŋko siˈlindɾiko/",
+          "definicion": "Herramienta de corte rotativa de avance axial en acero rápido al cobalto (HSS-Co 5%) con canales helicoidales de evacuación de viruta y punta autocentrante de 135°.",
+          "aplicacion": "Taladrado de precisión en centros CNC y preparación de barrenos previos (Ø8.5 mm para machuelos métricos M10 × 1.5).",
+          "mantenimiento": "Reafilado simétrico de labios a 135° y sujeción firme sobre el zanco cilíndrico en broqueros o boquillas ER."
+        },
+        "en": {
+          "nombre": "Straight-shank drills",
+          "sinonimo": "HSS-Co Twist Drill Bit / Jobber Drill",
+          "fonetica": "/streɪt ʃæŋk drɪlz/",
+          "definicion": "Axial-feed rotary cutting tool made of 5% cobalt high-speed steel featuring helical flutes for chip evacuation and a self-centering 135° split point.",
+          "aplicacion": "Precision holemaking on CNC mills and drilling tap holes in alloy and stainless steels.",
+          "mantenimiento": "Maintain symmetric lip height during re-grinding and clamp strictly on the cylindrical shank."
+        },
+        "de": {
+          "nombre": "Spiralbohrer mit Zylinderschaft",
+          "sinonimo": "Wendelbohrer DIN 338",
+          "fonetica": "/ʃpiˈʁaːlˌboːʁɐ/"
+        },
+        "fr": {
+          "nombre": "Forets à queue cylindrique",
+          "sinonimo": "Foret hélicoïdal HSS-Co",
+          "fonetica": "/fɔʁɛ a kø silɛ̃dʁik/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-MAQ-003",
+      "categoria": "Herramientas de corte",
+      "subcategoria": "Maquinado con Plaquitas Indexables",
+      "resumenCorto": "Pastilla Carburo Indexable",
+      "norma": "ISO 1832",
+      "subnorma": "DIN 4987",
+      "especificaciones": {
+        "material": "Carburo Sinterizado",
+        "dureza": "Grado ISO P15-P25",
+        "precision": "Tol. Clase M (±0.08)",
+        "subprecision": "Radio nariz rε 0.8mm",
+        "rango": "12.9 mm · Espesor 4.76",
+        "acabado": "CVD Multicapa TiCN+Al2O3",
+        "fijacion": "Porta Insertos / Tornillo Torx"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Insertos de carburo para fresado",
+          "sinonimo": "Inserto CNMG / Pastilla Intercambiable",
+          "fonetica": "/inˈseɾtos ðe kaɾˈβuɾo/",
+          "definicion": "Plaquita intercambiable de metal duro sinterizado con múltiples filos indexables, rompevirutas moldeado y recubrimiento térmico multicapa CVD/PVD.",
+          "aplicacion": "Montaje en fresas de cara con insertos (Face mills), porta insertos verticales y cuchillas de boring para desbaste y acabado pesado.",
+          "mantenimiento": "Rotar (indexar) al siguiente filo cuando el desgaste alcance 0.25 mm y limpiar el asiento del porta insertos con aire comprimido."
+        },
+        "en": {
+          "nombre": "Carbide milling inserts",
+          "sinonimo": "Indexable Carbide Insert / CNMG",
+          "fonetica": "/ˈkɑːbaɪd ˈmɪlɪŋ ˈɪnsɜːts/",
+          "definicion": "Indexable cemented carbide cutting insert featuring molded chipbreaker geometry and multi-layer thermal coating for high-speed metal removal.",
+          "aplicacion": "Mounted in indexable-insert face mills, end-mill insert holders, and boring bars for roughing and finishing steels.",
+          "mantenimiento": "Index to a fresh cutting edge when flank wear reaches 0.25 mm and clean the pocket seat before tightening."
+        },
+        "de": {
+          "nombre": "Hartmetall-Wendeschneidplatten",
+          "sinonimo": "Fräswendeplatten",
+          "fonetica": "/ˈvɛndəˌʃnaɪ̯tplatn̩/"
+        },
+        "fr": {
+          "nombre": "Plaquettes carbure de fraisage",
+          "sinonimo": "Plaquette amovible",
+          "fonetica": "/plakɛt kaʁbyʁ/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-SUJ-001",
+      "categoria": "Dispositivos de sujeción",
+      "subcategoria": "Utillaje y Fijación en Mesa CNC",
+      "resumenCorto": "Boca 150mm Rectificada",
+      "norma": "ISO 1984",
+      "subnorma": "DIN 6370",
+      "especificaciones": {
+        "material": "Fundición GGG-60",
+        "dureza": "HRC 58 (Guías)",
+        "precision": "±0.01 mm / 100mm",
+        "subprecision": "Fuerza 45 kN",
+        "rango": "Apertura 0 - 225 mm",
+        "acabado": "Rectificado Paralelo",
+        "fijacion": "Pernos y Tuercas de Ranura T"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Prensas de sujeción hidráulicas",
+          "sinonimo": "Prensa de Precisión CNC / Mordaza",
+          "fonetica": "/ˈpɾensas ðe suxeˈsjon iˈðɾawlikas/",
+          "definicion": "Dispositivo de sujeción de alta rigidez para mesas de fresado CNC con guías templadas y rectificadas y multiplicador hidromecánico de 45 kN con sistema antilevante.",
+          "aplicacion": "Amarre firme de bloques prismáticos sobre paralelas de precisión en centros de mecanizado vertical (VMC).",
+          "mantenimiento": "Evacuar virutas del husillo, apoyar sobre paralelas de precisión limpias y alinear la mordaza fija con indicador de carátula."
+        },
+        "en": {
+          "nombre": "Hydraulic clamping vises",
+          "sinonimo": "Precision CNC Machine Vise",
+          "fonetica": "/haɪˈdrɒlɪk ˈklæmpɪŋ ˈvaɪsɪz/",
+          "definicion": "High-rigidity CNC workholding fixture with hardened ground ways and an integrated hydromechanical booster delivering 45 kN of pull-down clamping force.",
+          "aplicacion": "Rigid prismatic workholding on precision parallels in 3- and 5-axis CNC vertical machining centers.",
+          "mantenimiento": "Flush swarf daily, stone bed ways lightly, and tram the fixed jaw parallel to the machine axis using a dial indicator."
+        },
+        "de": {
+          "nombre": "Hydraulische Maschinenschraubstöcke",
+          "sinonimo": "NC-Hochdruckspanner",
+          "fonetica": "/maˈʃiːnənˌʃʁaʊ̯pʃtœkə/"
+        },
+        "fr": {
+          "nombre": "Étaux de serrage hydrauliques",
+          "sinonimo": "Étau de précision CNC",
+          "fonetica": "/eto idʁolik/"
+        }
+      }
+    },
+    {
+      "id": "TOOL-SUJ-002",
+      "categoria": "Dispositivos de sujeción",
+      "subcategoria": "Portaherramientas Rotativos",
+      "resumenCorto": "Cambio Rápido 1-13mm",
+      "norma": "DIN 238",
+      "subnorma": "ISO 10888",
+      "especificaciones": {
+        "material": "Acero 20CrMnTi",
+        "dureza": "HRC 60 (Mordazas)",
+        "precision": "Runout ≤ 0.03 mm",
+        "subprecision": "Autoapriete Axial",
+        "rango": "Ø1.0 - 13.0 mm",
+        "acabado": "Moleteado Diamante",
+        "fijacion": "Cono B16 / Cambio Rápido"
+      },
+      "idiomas": {
+        "es": {
+          "nombre": "Broqueros de cambio rápido",
+          "sinonimo": "Portabrocas Automático / Broquero",
+          "fonetica": "/bɾoˈkeɾos ðe ˈkambjo ˈrapiðo/",
+          "definicion": "Dispositivo de sujeción rotativo sin llave de tres mordazas autocentrantes templadas con mecanismo de autoapriete proporcional al par de corte.",
+          "aplicacion": "Sujeción rápida de brocas con zanco cilíndrico, brocas de centrado y rimas rectas en fresadoras y centros CNC.",
+          "mantenimiento": "Sujetar exclusivamente sobre el zanco cilíndrico limpio y sin rebabas; nunca apretar sobre las flautas de la broca."
+        },
+        "en": {
+          "nombre": "Quick-change drill chucks",
+          "sinonimo": "Keyless Drill Chuck",
+          "fonetica": "/kwɪk tʃeɪndʒ drɪl tʃʌks/",
+          "definicion": "Keyless self-tightening rotary toolholder with three hardened self-centering jaws that increase gripping torque proportionally to drilling load.",
+          "aplicacion": "Rapid clamping of straight-shank drills, center drills, and machine reamers on milling machines and drilling spindles.",
+          "mantenimiento": "Clamp only burr-free cylindrical shanks and keep internal jaws free of chips and coolant residue."
+        },
+        "de": {
+          "nombre": "Schnellwechsel-Bohrfutter",
+          "sinonimo": "Schnellspannbohrfutter",
+          "fonetica": "/ˈʃnɛlʃpanˌboːɐ̯fʊtɐ/"
+        },
+        "fr": {
+          "nombre": "Mandrins de perçage à changement rapide",
+          "sinonimo": "Mandrin auto-serrant",
+          "fonetica": "/mɑ̃dʁɛ̃ oto sɛʁɑ̃/"
+        }
+      }
+    }
+  ],
+  "vocabularioCNC": [
+    { "clasificacion": "Herramientas de corte", "es": "Broca avellanadora", "en": "Countersink drill", "nota": "Forma un asiento cónico para ocultar la cabeza de tornillos avellanados (no traducir literalmente como 'hazelnut drill')." },
+    { "clasificacion": "Herramientas de corte", "es": "Broca tipo sierra", "en": "Saw-type drill", "nota": "Broca dentada para corte periférico y ampliación de barrenos en lámina o materiales compuestos." },
+    { "clasificacion": "Herramientas de corte", "es": "Brocas con zanco cilíndrico", "en": "Straight-shank drills", "nota": "En inglés técnico de maquinado, 'zanco' o 'mango' cilíndrico se traduce como 'straight shank'." },
+    { "clasificacion": "Herramientas de corte", "es": "Broca con zanco cónico", "en": "Taper-shank drill", "nota": "'Zanco cónico' (Cono Morse) se traduce técnicamente como 'taper shank' para montaje directo en husillo." },
+    { "clasificacion": "Herramientas de corte", "es": "Brocas de centrado", "en": "Center drills", "nota": "Broca rígida y corta para iniciar agujeros guía con exactitud posicional antes del taladrado profundo." },
+    { "clasificacion": "Herramientas de corte", "es": "Brocas de hélice rápida", "en": "Fast-helix drills", "nota": "Ángulo de hélice pronunciado (35°-40°) para evacuar viruta larga en aluminio y materiales blandos." },
+    { "clasificacion": "Herramientas de corte", "es": "Brocas de hélice lenta", "en": "Slow-helix drills", "nota": "Ángulo de hélice reducido (12°-20°) para latón, bronce y plásticos evitando el enganche axial." },
+    { "clasificacion": "Herramientas de corte", "es": "Brocas escalonadas", "en": "Step drills", "nota": "Permiten taladrar y escalonar múltiples diámetros concéntricos en una sola operación axial." },
+    { "clasificacion": "Herramientas de corte", "es": "Brocas de núcleo", "en": "Core drills", "nota": "Alargan barrenos preexistentes o fundidos con varios labios sin cortar en el centro." },
+    { "clasificacion": "Herramientas de corte", "es": "Brocas de punta intercambiable", "en": "Replaceable-tip drills", "nota": "Cuerpo modular de acero con cabeza de carburo intercambiable para producción CNC de alto volumen." },
+    { "clasificacion": "Herramientas de corte", "es": "Rimas rectas", "en": "Straight reamers", "nota": "En taller mexicano 'rima' equivale a escariador de precisión ('reamer' en inglés técnico, nunca 'rhyme')." },
+    { "clasificacion": "Herramientas de corte", "es": "Rima de perno cónico", "en": "Taper-pin reamer", "nota": "Escariador con conicidad normalizada (1:50 o 1:48) para ajuste exacto de pasadores cónicos." },
+    { "clasificacion": "Herramientas de corte", "es": "Rima de máquina recta", "en": "Machine straight reamer", "nota": "Herramienta de acabado fino para lograr tolerancias H7 en barrenos sobre fresadora CNC." },
+    { "clasificacion": "Herramientas de corte", "es": "Rima cónica para pasadores", "en": "Taper-pin reamer for dowels", "nota": "En inglés industrial 'pasador de localización' se denomina 'dowel pin' y 'rima' es 'reamer'." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores verticales de una sola pieza", "en": "One-piece end mills", "nota": "'Cortador vertical' se traduce universalmente en CNC como 'end mill' (nunca 'vertical cutter')." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores verticales rompevirutas PMX", "en": "PMX chip-breaker end mills", "nota": "End mill de desbaste pesado con perfil rompevirutas ('chip-breaker') para fragmentar viruta gruesa." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores verticales de punta bola", "en": "Ball-nose end mills", "nota": "'Punta bola' o esférica se denomina técnicamente 'ball-nose end mill' para superficies 3D y moldes." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores verticales ranuras T", "en": "T-slot cutters", "nota": "Fresa de cuello aliviado para maquinar ranuras en T ('T-slots') en mesas y placas de sujeción." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores tipo woodruff", "en": "Woodruff keyseat cutters", "nota": "Fresa circular para maquinar cuñeros o chaveteros semicirculares ('Woodruff keyseats') en ejes." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores verticales miniatura con cuello largo", "en": "Long-neck miniature end mills", "nota": "Micro-fresas con alivio de cuello ('long-neck') para cavidades profundas en moldes e inyección." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores verticales de cuello corto", "en": "Short-neck end mills", "nota": "Máxima rigidez contra la deflexión radial en fresado de aceros endurecidos." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores routers", "en": "Router cutters", "nota": "Cortadores de geometría especial para polímeros, compuestos de fibra de carbono y aluminio." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores para cuerdas", "en": "Thread cutters", "nota": "En jerga mecánica 'cuerda' significa rosca ('thread'), por lo que se traduce como 'thread cutter' o 'thread mill' (jamás 'rope cutter')." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores planeadores", "en": "Face mills", "nota": "'Planeador' en fresado es una fresa de careado o planeado frontal ('face mill', no 'glider')." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores de disco", "en": "Slitting saws", "nota": "Sierras circulares delgadas para ranurado profundo y tronzado en fresadora." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores de ángulo simple", "en": "Single-angle cutters", "nota": "Fresas angulares para maquinar colas de milano, chaflanes y guías inclinadas." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores de ángulo doble", "en": "Double-angle cutters", "nota": "Fresas con doble cono simétrico para ranuras en V y avellanados angulares." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores de ranurar", "en": "Slotting cutters", "nota": "Fresas de tres cortes periféricos para abrir canales y chaveteros de ancho preciso." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores de desbaste", "en": "Roughing cutters", "nota": "En maquinado, 'desbaste' es 'roughing' (alta tasa de remoción de metal)." },
+    { "clasificacion": "Herramientas de corte", "es": "Cortadores de acabado", "en": "Finishing cutters", "nota": "En maquinado, 'acabado' superficial fino se traduce como 'finishing'." },
+    { "clasificacion": "Herramientas de corte", "es": "Escariadores de máquina", "en": "Machine reamers", "nota": "Sinónimo normativo de rima de máquina para calibrar diámetros interiores con precisión micrométrica." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelos estándar", "en": "Standard taps", "nota": "'Machuelo' en México y Latinoamérica se traduce al inglés técnico como 'tap' (herramienta para tallar roscas internas)." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelos métricos", "en": "Metric taps", "nota": "Machuelos con perfil ISO de 60° graduados en paso milimétrico (ej. M8x1.25)." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelos espirales tipo Gun", "en": "Gun spiral taps", "nota": "Machuelo con entrada helicoidal ('Spiral point / Gun tap') que empuja la viruta hacia adelante en agujeros pasantes." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelo con hélice rápida", "en": "Fast-spiral tap", "nota": "Extrae la viruta hacia arriba, indispensable para roscar agujeros ciegos ('blind holes') en CNC." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelo NPT", "en": "NPT tap", "nota": "Machuelo cónico (National Pipe Thread) con conicidad 1:16 para roscas de tubería herméticas." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelos para rosca fina", "en": "Fine-pitch taps", "nota": "'Rosca fina' (menor distancia entre crestas) se traduce técnicamente como 'fine-pitch thread'." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelos para rosca gruesa", "en": "Coarse-pitch taps", "nota": "'Rosca gruesa' o estándar se traduce técnicamente como 'coarse-pitch thread'." },
+    { "clasificacion": "Herramientas de corte", "es": "Boring barra", "en": "Boring bar", "nota": "Barra de mandrinado ('boring bar') para agrandar y rectificar agujeros con concentricidad exacta." },
+    { "clasificacion": "Herramientas de corte", "es": "Cuchillas de boring", "en": "Boring inserts", "nota": "Insertos o pastillas montadas en el cabezal mandrinador ('boring head')." },
+    { "clasificacion": "Herramientas de corte", "es": "Insertos de carburo para fresado", "en": "Carbide milling inserts", "nota": "Plaquitas intercambiables de carburo de tungsteno sinterizado para cabezales de fresado." },
+    { "clasificacion": "Herramientas de corte", "es": "Insertos de cerámica", "en": "Ceramic inserts", "nota": "Plaquitas para maquinado a ultra-alta velocidad en fundiciones y superaleaciones." },
+    { "clasificacion": "Herramientas de corte", "es": "Insertos cermet", "en": "Cermet inserts", "nota": "Compuesto cerámico-metálico ideal para acabados espejo y tolerancias cerradas en aceros." },
+    { "clasificacion": "Herramientas de corte", "es": "Porta insertos verticales", "en": "End-mill insert holders", "nota": "Cuerpo de cortador vertical diseñado para alojar insertos intercambiables de carburo." },
+    { "clasificacion": "Herramientas de corte", "es": "Fresas de chaflanar", "en": "Chamfer mills", "nota": "'Chaflanar' o matar aristas vivas (45°/60°) se traduce en CNC como 'chamfering'." },
+    { "clasificacion": "Herramientas de corte", "es": "Fresas de ranurar de tres cortes", "en": "Three-flute slotting mills", "nota": "En herramientas rotativas, 'cortes', 'labios' o 'gavilanes' se traduce técnicamente como 'flutes'." },
+    { "clasificacion": "Herramientas de corte", "es": "Fresas de desbaste con dientes ondulados", "en": "Wavy-tooth roughing mills", "nota": "Perfil sinusoidal o 'corncob' que reduce las fuerzas de corte en desbaste profundo." },
+    { "clasificacion": "Herramientas de corte", "es": "Fresas de cara con insertos", "en": "Indexable-insert face mills", "nota": "Plato planeador con múltiples insertos indexables para carear superficies amplias." },
+    { "clasificacion": "Herramientas de corte", "es": "Brocas de refrigerante interno", "en": "Coolant-through drills", "nota": "Poseen conductos helicoidales internos que inyectan soluble a alta presión directo al filo." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelos de rosca cilíndrica", "en": "Cylindrical-thread taps", "nota": "Tallan roscas paralelas estándar (como ISO métrica, UNC, UNF o BSPP)." },
+    { "clasificacion": "Herramientas de corte", "es": "Machuelos de rosca cónica", "en": "Taper-thread taps", "nota": "Tallan roscas con interferencia cónica de sellado (como NPT o BSPT)." },
+    { "clasificacion": "Herramientas de corte", "es": "Escariadores de refrigerante", "en": "Coolant-through reamers", "nota": "Rimas con irrigación axial/radial interna para evitar adhesión de material y lograr acabado espejo." },
+
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Calibradores Vernier", "en": "Vernier calipers", "nota": "Instrumento universal de escala fija y nonio deslizante para exteriores, interiores y profundidades." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Calibradores digitales", "en": "Digital calipers", "nota": "Calibrador con encoder capacitivo e indicador LCD con conversión instantánea mm/pulgada." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Calibradores de carátula", "en": "Dial calipers", "nota": "En metrología, 'carátula' o 'esfera graduada' se traduce como 'dial' (no 'cover' ni 'face')." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Micrómetro para exterior", "en": "Outside micrometer", "nota": "Arco micrométrico de alta precisión (0.01 a 0.001 mm) para medir diámetros y espesores externos." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Micrómetro para interior", "en": "Inside micrometer", "nota": "Mide diámetros internos de barrenos y cilindros con contacto directo de dos puntas." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Micrómetro para profundidad", "en": "Depth micrometer", "nota": "Puente rectificado con varillas intercambiables para medir profundidades de cajas y escalones." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Micrómetro de tubo", "en": "Tube micrometer", "nota": "Cuenta con yunque esférico o cilíndrico perpendicular para medir el espesor de pared de tubos." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Calibradores de espesores", "en": "Feeler gauges", "nota": "También llamados 'lainas' en taller; hojas calibradas para verificar holguras estrechas ('feeler gauges')." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Indicador de pestaña", "en": "Edge finder", "nota": "También conocido como 'test indicator' o buscador de bordes para hallar el cero pieza en fresado CNC." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Indicador de carátula", "en": "Dial indicator", "nota": "Reloj comparador mecánico para verificar alineación, paralelismo y excentricidad (runout)." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Base magnética para indicador", "en": "Magnetic indicator base", "nota": "Bloque con imán conmutable ON/OFF para fijar el indicador de carátula al cabezal o mesa CNC." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Juego de Gages para radios", "en": "Radius gauge set", "nota": "Plantillas metálicas calibradas para verificar radios cóncavos y convexos en piezas maquinadas." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Calibrador digital eje \"Z\"", "en": "Z-axis digital indicator", "nota": "Presetter o palpador cero en Z para referenciar la longitud de las herramientas en el centro CNC." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Bloques patrón", "en": "Gauge blocks", "nota": "Bloques Johansson rectificados y lapeados como referencia primaria de longitud (no traducir como 'boss blocks')." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Gages de rosca", "en": "Thread gauges", "nota": "Calibres tapón o anillo para verificar el ajuste y tolerancia de roscas internas y externas." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Gages de paso", "en": "Pitch gauges", "nota": "Cuentahilos o peine de roscas para identificar el paso en milímetros o hilos por pulgada (TPI)." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Gages de cono", "en": "Taper gauges", "nota": "Calibres cónicos para inspeccionar tanto el diámetro como la conicidad de alojamientos y husillos." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Regla de acero rígida", "en": "Steel rule", "nota": "En metrología industrial una regla graduada se denomina 'steel rule' (no 'ruler' escolar)." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Regla flexible", "en": "Flexible steel rule", "nota": "Regla de acero templado delgado para medir sobre superficies ligeramente curvas o espacios reducidos." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Escuadra de precisión", "en": "Precision square", "nota": "Escuadra rectificada y templada a 90° exactos para control de perpendicularidad." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Escuadra combinada", "en": "Combination square", "nota": "Conjunto de regla ranurada con cabezal de 90°/45°, transportador y buscacentros." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Nivel de burbuja de precisión", "en": "Precision spirit level", "nota": "'Nivel de burbuja' para nivelación de bancadas de máquinas-herramienta es 'precision spirit level'." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Comparador de altura", "en": "Height gauge", "nota": "Instrumento vertical sobre mármol de granito para trazado y medición de cotas en el eje Z." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Gages de límite pasa–no pasa", "en": "Go / no-go gauges", "nota": "'Pasa–no pasa' se traduce universalmente en control de calidad como 'Go / no-go gauge'." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Gages de diámetro", "en": "Diameter gauges", "nota": "Pernos calibrados (pin gauges) o anillos patrón para inspección rápida de diámetros." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Gages de ranura", "en": "Slot gauges", "nota": "Calibres planos para comprobar el ancho exacto de chaveteros y ranuras." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Comparador de carátula con brazo articulado", "en": "Articulated-arm dial comparator", "nota": "Soporte articulado con bloqueo central hidráulico o mecánico para posicionar el reloj comparador." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Micrómetro de tres puntas", "en": "Three-point micrometer", "nota": "Imito o micrómetro autocentrante de 3 contactos a 120° para medir barrenos con precisión de micras." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Gages de cono Morse", "en": "Morse-taper gauges", "nota": "Patrones macho y hembra para verificar conos Morse (MT1 a MT6) en husillos y adaptadores." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Gages de profundidad con base", "en": "Base-mounted depth gauges", "nota": "Medidor de profundidad con puente de apoyo ancho para mediciones estables en cavidades." },
+    { "clasificacion": "Instrumentos de medición y verificación", "es": "Escuadra de bisel", "en": "Bevel square", "nota": "Escuadra con filo biselado para detectar fugas de luz al verificar perpendicularidad fina." },
+
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Juegos de \"V\" block", "en": "V-block sets", "nota": "Bloques prismáticos con ranura en V a 90° para asentar y alinear piezas cilíndricas o ejes." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Localizador electrónico", "en": "Electronic edge finder", "nota": "Baila o palpador óptico/acústico que enciende un LED al tocar el borde de la pieza metálica." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Localizador de borde mecánico", "en": "Mechanical edge finder", "nota": "Conocido en taller como 'baila' o 'bailarina'; cilindro descentrado que se alinea al tocar la arista." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Paralelas de precisión", "en": "Precision parallels", "nota": "Barras pareadas templadas y rectificadas que elevan la pieza dentro de la prensa de fresado." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Juego de paralelas graduadas", "en": "Graduated parallel set", "nota": "Estuche escalonado de paralelas en diversas alturas para distintos espesores de trabajo." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Block \"V\" ajustables", "en": "Adjustable V-blocks", "nota": "Bloques en V con altura o ángulo graduable para piezas cilíndricas escalonadas." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Block \"V\" fijos", "en": "Fixed V-blocks", "nota": "Bloques en V monolíticos rectificados en par para sujeción e inspección de ejes." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Block angulares de precisión", "en": "Precision angle blocks", "nota": "Cuñas patrón rectificadas a ángulos exactos (1°, 5°, 15°, 30°, 45°) para ajustes sin barra de senos." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Placa de ángulo", "en": "Angle plate", "nota": "Escuadra robusta de fundición con ranuras para sujetar piezas a 90° exactos respecto a la mesa CNC." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Soporte de ángulo", "en": "Angle bracket", "nota": "Escuadra de apoyo reforzada con nervadura para montajes verticales pesados." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Cuñas de precisión", "en": "Precision wedges", "nota": "Elementos de ajuste fino por plano inclinado para posicionamiento micrométrico de piezas." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Cuñas de nivelación", "en": "Leveling wedges", "nota": "Zapatas de nivelación para alinear bancadas de máquinas o fundiciones pesadas en mesa." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Barras de alineación", "en": "Alignment bars", "nota": "Barras rectificadas para alinear dispositivos y verificar la geometría de los ejes X/Y." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Pines de localización cilíndricos", "en": "Cylindrical locating pins", "nota": "Pernos guía rectificados que restringen dos grados de libertad en fixtures modulares CNC." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Pines de localización cónicos", "en": "Tapered locating pins", "nota": "Facilitan la entrada y el centrado sin holgura en barrenos de referencia de fixtures." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Pines de resorte para localización", "en": "Spring-loaded locating pins", "nota": "Posicionadores retráctiles por resorte para mantener la pieza contra los topes antes de bridar." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Topes de precisión", "en": "Precision stops", "nota": "Topes fijos de bancada o mordaza ('work stops') para repetir el cero pieza en producción en serie." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Topes angulares", "en": "Angular stops", "nota": "Topes orientables para apoyar piezas con geometría inclinada o chaflanes." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Soportes de apoyo ajustables", "en": "Adjustable support rests", "nota": "Gatos mecánicos de tornillo ('screw jacks') para soportar voladizos y evitar vibración al fresar." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Apoyos de punta", "en": "Point supports", "nota": "Contactos puntuales o esféricos para asentar superficies brutas de fundición sin balanceo." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Apoyos de rodillo", "en": "Roller supports", "nota": "Soportes con rodamiento lineal/rotativo para deslizar barras o placas pesadas en la mesa." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Barras patrón de alineación", "en": "Alignment master bars", "nota": "Mandriles de prueba con cono CAT/BT rectificado para verificar la coaxialidad del husillo CNC." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Bloques de localización escalonados", "en": "Step-type locating blocks", "nota": "Bloques dentados que sirven de apoyo regulable para bridas de sujeción escalonadas." },
+    { "clasificacion": "Elementos de alineación, apoyo y localización", "es": "Placas de referencia", "en": "Reference plates", "nota": "Subplacas modulares rectificadas con retícula de barrenos calibrados para cambio rápido de fixtures." },
+
+    { "clasificacion": "Dispositivos de sujeción", "es": "Prensa de precisión", "en": "Precision vise", "nota": "En maquinado CNC, 'prensa' o 'mordaza de mesa' se traduce como 'vise' (nunca 'press' editorial/hidráulica vertical)." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Prensas de acción rápida", "en": "Quick-action vises", "nota": "Prensas de cierre rápido por leva o trinquete para carga y descarga veloz de piezas." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Prensas angulares", "en": "Angle vises", "nota": "Prensas con base basculante graduada en grados para fresar planos inclinados sin quinto eje." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Boquillas de sujeción ER40", "en": "ER40 collets", "nota": "En portaherramientas CNC, 'boquilla' elástica ranurada se traduce siempre como 'collet' (no 'nozzle')." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Boquillas de sujeción R8", "en": "R8 collets", "nota": "Boquillas con rosca posterior de tracción directa usadas en el husillo de fresadoras tipo Bridgeport." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Boquillas de sujeción 5C", "en": "5C collets", "nota": "Boquillas estándar de precisión para sujetar barras redondas, hexagonales o cuadradas en indexadores." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Boquillas de sujeción DIN6388", "en": "DIN6388 collets", "nota": "Boquillas de alta concentricidad tipo OZ (DIN 6388) para fresado de alta carga." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Chucks independientes", "en": "Independent chucks", "nota": "Plato de 4 mordazas independientes para centrar piezas asimétricas o prismáticas con reloj comparador." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Chucks autocentrantes", "en": "Self-centering chucks", "nota": "Plato universal de 3 mordazas espirales sincronizadas para sujetar redondos al instante." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Broqueros", "en": "Drill chucks", "nota": "En México 'broquero' es el portabrocas de tres mordazas; su traducción técnica exacta es 'drill chuck'." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Broqueros de cambio rápido", "en": "Quick-change drill chucks", "nota": "Portabrocas sin llave o con casquillo de liberación rápida para cambiar herramientas sin llave." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Clamps de sujeción planos", "en": "Flat clamps", "nota": "Bridas planas ('strap/flat clamps') para fijar placas directamente sobre la mesa ranurada del CNC." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Clamps cónicos", "en": "Taper clamps", "nota": "Bridas con nariz cónica para sujetar en cavidades laterales o ranuras estrechas." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Clamps escalón", "en": "Step clamps", "nota": "Bridas con talón dentado que se acoplan con bloques escalonados ('step blocks') para nivelar la sujeción." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Clamps nuzzler", "en": "Nuzzler clamps", "nota": "Bridas de empuje lateral y descendente de perfil bajo que dejan libre toda la cara superior de la pieza." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Clamps U", "en": "U-clamps", "nota": "Bridas en horquilla tipo U que permiten deslizar la brida hacia atrás sin retirar la tuerca del birlo." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Tuercas de pestaña", "en": "Flange nuts", "nota": "Tuercas templadas con arandela integrada ('flange') que distribuyen la presión sobre la brida sin dañarla." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Tuercas de acople", "en": "Coupling nuts", "nota": "Tuercas hexagonales largas para unir dos birlos roscados y extender la altura de sujeción." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Birlos roscados", "en": "Threaded studs", "nota": "En sujeción industrial, 'birlo' o espárrago roscado en ambos extremos se traduce como 'threaded stud'." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Juegos de rondanas", "en": "Washer sets", "nota": "'Rondana' (arandela) se traduce técnicamente como 'washer'." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Rondanas planas", "en": "Flat washers", "nota": "Arandelas templadas de asiento plano para proteger las superficies de bridas y mesas." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Rondanas de resorte", "en": "Spring washers", "nota": "Arandelas de presión tipo Grover o Belleville que mantienen la tensión bajo vibración de corte." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Barras de sujeción", "en": "Clamp bars", "nota": "Barras puente de sujeción para bridar placas anchas o moldes sobre la mesa CNC." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Pernos de sujeción", "en": "Clamping bolts", "nota": "Tornillos de alta resistencia (Grado 10.9 / 12.9) para sistemas de bridaje en mesa." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Placas de sujeción", "en": "Clamping plates", "nota": "Placas base o bridas anchas de fijación para distribuir esfuerzos de amarre." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Tornillos de sujeción de cabeza hexagonal", "en": "Hex-head clamping screws", "nota": "Tornillos de cabeza hexagonal externa para apriete con llave española o dado." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Tornillos de sujeción de cabeza Allen", "en": "Allen-head clamping screws", "nota": "Tornillos cilíndricos con hexágono interior (Socket Head Cap Screws) muy usados en utillaje CNC." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Tornillos de sujeción de cabeza T", "en": "T-head clamping screws", "nota": "Tornillos cuya cabeza en forma de T entra directamente en las ranuras de la mesa fresadora." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Tuercas de sujeción T", "en": "T-nuts", "nota": "Tuercas con perfil en T invertida y tope de seguridad para no dañar el fondo de la ranura de la mesa." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Rondanas de seguridad", "en": "Lock washers", "nota": "Arandelas que impiden el aflojamiento espontáneo de las tuercas por vibraciones de maquinado." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Abrazaderas de sujeción articuladas", "en": "Articulated clamps", "nota": "Bridas articuladas o tipo toggle clamp para sujeción repetitiva rápida en fixtures de producción." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Prensas de sujeción neumáticas", "en": "Pneumatic clamping vises", "nota": "Prensas accionadas por aire comprimido para automatización y celdas robotizadas CNC." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Prensas de sujeción hidráulicas", "en": "Hydraulic clamping vises", "nota": "Prensas de alta fuerza constante accionadas hidráulicamente para fresado pesado." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Placas de sujeción con ranuras en T", "en": "T-slot clamping plates", "nota": "Placas modulares ranuradas que amplían o adaptan la mesa de trabajo del centro de mecanizado." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Pernos de ranura T", "en": "T-slot bolts", "nota": "Pernos forjados de una pieza con cabeza en T para anclaje de prensas y cabezales divisores." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Tuercas de ranura T", "en": "T-slot nuts", "nota": "Tuercas deslizantes cementadas donde se enroscan los birlos de sujeción sobre la mesa CNC." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Birlos de sujeción de rosca gruesa", "en": "Coarse-thread clamping studs", "nota": "Espárragos de paso estándar para enroscado rápido y alta resistencia al desgarre en tuercas T." },
+    { "clasificacion": "Dispositivos de sujeción", "es": "Birlos de sujeción de rosca fina", "en": "Fine-thread clamping studs", "nota": "Espárragos de paso fino que generan mayor fuerza axial de apriete con menor par de torsión." }
+  ]
+}
